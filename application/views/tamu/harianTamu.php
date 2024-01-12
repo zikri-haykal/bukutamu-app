@@ -107,22 +107,21 @@
                             placeholder="Masukkan namamu">
                         <?= form_error('nama_pengunjung', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <div style="width: 48%;">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                             <label for="instansi" class="form-label">Instansi</label>
                             <input type="text" name="instansi" class="form-control" id="instansi"
                                 aria-describedby="instansi" value="<?= set_value('instansi') ?>"
-                                placeholder="Asal Instansi">
+                                placeholder="Nama instansi">
                             <?= form_error('instansi', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
-                        <div style="width: 48%;">
+                        <div class="col-md-6 mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
                             <input type="text" name="alamat" class="form-control" id="alamat" aria-describedby="alamat"
-                                value="<?= set_value('alamat') ?>" placeholder="Alamat Instansimu">
+                                value="<?= set_value('alamat') ?>" placeholder="Alamat Acara">
                             <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                     </div>
-
                     <div class="mb-3">
                         <label for="keperluan" class="form-label">Keperluan</label>
                         <input type="text" name="keperluan" class="form-control" id="keperluan"
