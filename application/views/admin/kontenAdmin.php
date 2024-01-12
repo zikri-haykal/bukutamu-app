@@ -7,7 +7,7 @@
                     <div class="card w-100">
                         <div class="card-body p-4">
                             <div class="mb-4">
-                                <h5 class="card-title fw-semibold">Detail Alamat</h5>
+                                <h5 class="card-title fw-semibold">Header Buku Tamu</h5>
                             </div>
                             <a href="<?= base_url('admin/updateKonten') ?>" class="btn btn-primary mb-2">Ubah</a>
                             <ul class="timeline-widget mb-0 position-relative mb-n5">

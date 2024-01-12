@@ -1,3 +1,19 @@
+<?php
+function getStatusClass($status)
+{
+    switch ($status) {
+        case 'Menunggu Konfirmasi':
+            return 'text-bg-warning';
+        case 'Diterima':
+            return 'text-bg-primary';
+        case 'Selesai':
+            return 'text-bg-success';
+        default:
+            return ''; // Default class jika status tidak sesuai dengan kondisi di atas
+    }
+}
+?>
+
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
@@ -68,7 +84,7 @@
                                         <?= $us['waktu']; ?>
                                     </td>
                                     <td>
-                                        <span class="badge rounded-pill text-bg-success">
+                                        <span class="badge rounded-pill <?= getStatusClass($us['status']); ?>">
                                             <?= $us['status']; ?>
                                         </span>
                                     </td>
@@ -109,23 +125,25 @@
                         <label for="pengundang" class="form-label">Nama Pengundang</label>
                         <input type="text" name="nama" class="form-control" id="pengundang"
                             aria-describedby="pengundang" value="<?= $user['nama']; ?>">
-                        <div id="pengundangHelp" class="form-text">Masukkan Namamu.</div>
+                        <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                     <div class="mb-3">
-                        <label for="tentang" class="form-label">Tentang</label>
+                        <label for="tentang" class="form-label">Tentang Pertemuan</label>
                         <textarea name="tentang" class="form-control" id="tentang"
                             aria-describedby="tentang"></textarea>
-                        <div id="tentangHelp" class="form-text">Tentang Pertemuan.</div>
                     </div>
-                    <div class="mb-3">
-                        <label for="tanggal" class="form-label">Tanggal</label>
-                        <input type="date" name="tanggal" class="form-control" id="tanggal" aria-describedby="tanggal">
-                        <div id="tanggalHelp" class="form-text">Tanggal Acara.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="waktu" class="form-label">Waktu</label>
-                        <input type="time" name="waktu" class="form-control" id="waktu" aria-describedby="waktu">
-                        <div id="waktuHelp" class="form-text">Waktu Acara.</div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="tanggal" class="form-label">Tanggal</label>
+                            <input type="date" name="tanggal" class="form-control" id="tanggal"
+                                aria-describedby="tanggal">
+                            <?= form_error('tanggal', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="waktu" class="form-label">Waktu</label>
+                            <input type="time" name="waktu" class="form-control" id="waktu" aria-describedby="waktu">
+                            <?= form_error('waktu', '<small class="text-danger pl-3">', '</small>'); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

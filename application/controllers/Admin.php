@@ -70,8 +70,9 @@ class Admin extends CI_Controller
     $data['konten'] = $this->Konten_model->getById(1);
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['acara'] = $this->Acara_model->get();
-    $this->form_validation->set_rules('nama_acara', 'Nama Acara', 'required', [
-      'required' => "Kolom Nama Acara harus diisi"
+    $this->form_validation->set_rules('nama_acara', 'Nama Acara', 'required|is_unique[acara.nama_acara]', [
+      'required' => "Kolom Nama Acara harus diisi",
+      'is_unique' => "Nama Acara sudah ada, Tambahkan Keterangan Waktu jika Nama Acara memang sama"
     ]);
     $this->form_validation->set_rules('tempat', 'Tempat', 'required', [
       'required' => "Kolom Nama Tempat harus diisi"
@@ -276,10 +277,12 @@ class Admin extends CI_Controller
   }
   public function isiAcara($nama_acara)
   {
+    // Decode nilai parameter dari URL
+    $decoded_nama_acara = urldecode($nama_acara);
     $data['konten'] = $this->Konten_model->getById(1);
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['acara'] = $this->Tamuacara_model->get();
-    $data['nama_acara'] = $nama_acara;
+    $data['nama_acara'] = $decoded_nama_acara;
 
     $this->load->view('layout/header', $data);
     $this->load->view('admin/isiAcaraAdmin', $data);

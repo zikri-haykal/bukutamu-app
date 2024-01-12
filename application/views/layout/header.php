@@ -8,7 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="<?= base_url('assets/') ?>images/logos/favicon.png" />
     <link rel="stylesheet" href="<?= base_url('assets/') ?>css/styles.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
-     <!-- Sertakan html2canvas dari CDN -->
+    <!-- Sertakan html2canvas dari CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
     <!-- Menyertakan xlsx dari CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
@@ -53,25 +53,16 @@
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="<?= base_url('tamu/harian') ?>" aria-expanded="false">
-                                    <span>
-                                        <i class="ti ti-pin"></i>
-                                    </span>
                                     <span class="hide-menu">Tamu Harian</span>
                                 </a>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="<?= base_url('tamu/acara') ?>" aria-expanded="false">
-                                    <span>
-                                        <i class="ti ti-pin"></i>
-                                    </span>
                                     <span class="hide-menu">Tamu acara</span>
                                 </a>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="<?= base_url('tamu/janji') ?>" aria-expanded="false">
-                                    <span>
-                                        <i class="ti ti-calendar"></i>
-                                    </span>
                                     <span class="hide-menu">Buat appointment</span>
                                 </a>
                             </li>
@@ -95,41 +86,26 @@
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="<?= base_url('admin/acara') ?>" aria-expanded="false">
-                                    <span>
-                                        <i class="ti ti-article"></i>
-                                    </span>
                                     <span class="hide-menu">Kelola Acara</span>
                                 </a>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="<?= base_url('admin/buku') ?>" aria-expanded="false">
-                                    <span>
-                                        <i class="ti ti-alert-circle"></i>
-                                    </span>
                                     <span class="hide-menu">Kelola Buku</span>
                                 </a>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="<?= base_url('admin/janji') ?>" aria-expanded="false">
-                                    <span>
-                                        <i class="ti ti-alert-circle"></i>
-                                    </span>
                                     <span class="hide-menu">Janji Temu</span>
                                 </a>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="<?= base_url('admin/holder') ?>" aria-expanded="false">
-                                    <span>
-                                        <i class="ti ti-cards"></i>
-                                    </span>
                                     <span class="hide-menu">Kelola User</span>
                                 </a>
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link" href="<?= base_url('admin/konten/') ?>" aria-expanded="false">
-                                    <span>
-                                        <i class="ti ti-cards"></i>
-                                    </span>
                                     <span class="hide-menu">Konten dan Saran</span>
                                 </a>
                             </li>
@@ -152,12 +128,6 @@
                             <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse"
                                 href="javascript:void(0)">
                                 <i class="ti ti-menu-2"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-                                <i class="ti ti-bell-ringing"></i>
-                                <div class="notification bg-primary rounded-circle"></div>
                             </a>
                         </li>
                     </ul>

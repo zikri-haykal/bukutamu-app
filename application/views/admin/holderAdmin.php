@@ -17,7 +17,7 @@
                 <div class="alert alert-info d-flex align-items-center" role="alert">
                     <i class="ti ti-info-circle me-2" style="font-size: 1.5em;"></i>
                     <div>
-                        Admin cuma bisa ganti role yaa!
+                        Admin hanya dapat mengubah Role, ya!
                     </div>
                 </div>
             </div>

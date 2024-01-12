@@ -31,7 +31,7 @@
                                 <h6 class="fw-semibold mb-0">Nama Acara</h6>
                             </th>
                             <th class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">Nama Anda</h6>
+                                <h6 class="fw-semibold mb-0">Nama Tamu</h6>
                             </th>
                             <th class="border-bottom-0">
                                 <h6 class="fw-semibold mb-0">Instansi</h6>

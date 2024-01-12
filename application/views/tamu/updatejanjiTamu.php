@@ -21,17 +21,19 @@
                                     id="tentang" aria-describedby="tentang"></input>
                                 <?= form_error('tentang', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
-                            <div class="mb-3">
-                                <label for="tanggal" class="form-label">Tanggal Janji</label>
-                                <input type="date" name="tanggal" class="form-control" id="tanggal"
-                                    aria-describedby="tanggal" value="<?= $janji['tanggal']; ?>">
-                                <?= form_error('tanggal', '<small class="text-danger pl-3">', '</small>'); ?>
-                            </div>
-                            <div class="mb-3">
-                                <label for="waktu" class="form-label">Waktu Janji</label>
-                                <input type="time" name="waktu" class="form-control" id="waktu" aria-describedby="waktu"
-                                    value="<?= $janji['waktu']; ?>">
-                                <?= form_error('waktu', '<small class="text-danger pl-3">', '</small>'); ?>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="tanggal" class="form-label">Tanggal Janji</label>
+                                    <input type="date" name="tanggal" class="form-control" id="tanggal"
+                                        aria-describedby="tanggal" value="<?= $janji['tanggal']; ?>">
+                                    <?= form_error('tanggal', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="waktu" class="form-label">Waktu Janji</label>
+                                    <input type="time" name="waktu" class="form-control" id="waktu"
+                                        aria-describedby="waktu" value="<?= $janji['waktu']; ?>">
+                                    <?= form_error('waktu', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col">

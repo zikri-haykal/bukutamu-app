@@ -13,7 +13,7 @@
                                 <label for="pengundang" class="form-label">Nama Pengundang</label>
                                 <input type="text" name="nama" class="form-control" id="pengundang"
                                     aria-describedby="pengundang" value="<?= $janji['nama']; ?>" readonly>
-                                <div id="pengundangHelp" class="form-text">Masukkan Namamu.</div>
+                                <div id="pengundangHelp" class="form-text">Masukkan Pengundang.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="tentang" class="form-label">Tentang</label>
@@ -21,29 +21,30 @@
                                     id="tentang" aria-describedby="tentang" readonly></input>
                                 <div id="tentangHelp" class="form-text">Tentang Pertemuan.</div>
                             </div>
-                            <div class="mb-3">
-                                <label for="tanggal" class="form-label">Tanggal Janji</label>
-                                <input type="date" name="tanggal" class="form-control" id="tanggal"
-                                    aria-describedby="tanggal" value="<?= $janji['tanggal']; ?>" readonly>
-                                <div id="tanggalHelp" class="form-text">Tanggal Acara.</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="waktu" class="form-label">Waktu Janji</label>
-                                <input type="time" name="waktu" class="form-control" id="waktu" aria-describedby="waktu"
-                                    value="<?= $janji['waktu']; ?>" readonly>
-                                <div id="waktuHelp" class="form-text">Waktu Acara.</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="status" class="form-label">Status</label>
-                                <select name="status" id="status" class="form-control">
-                                    <option value="Menunggu Konfirmasi" <?= ($janji['status'] == 'Menunggu Konfirmasi') ? 'selected' : ''; ?>>Menunggu
-                                        Konfirmasi</option>
-                                    <option value="Diterima" <?= ($janji['status'] == 'Diterima') ? 'selected' : ''; ?>>
-                                        Diterima</option>
-                                    <option value="Selesai" <?= ($janji['status'] == 'Selesai') ? 'selected' : ''; ?>>
-                                        Selesai</option>
-                                </select>
-                                <div id="status" class="form-text">Ubah Status.</div>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="tanggal" class="form-label">Tanggal Janji</label>
+                                    <input type="date" name="tanggal" class="form-control" id="tanggal"
+                                        aria-describedby="tanggal" value="<?= $janji['tanggal']; ?>" readonly>
+                                    <div id="tanggalHelp" class="form-text">Tanggal Acara.</div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="waktu" class="form-label">Waktu Janji</label>
+                                    <input type="time" name="waktu" class="form-control" id="waktu"
+                                        aria-describedby="waktu" value="<?= $janji['waktu']; ?>" readonly>
+                                    <div id="waktuHelp" class="form-text">Waktu Acara.</div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="status" class="form-label">Status</label>
+                                    <select name="status" id="status" class="form-control">
+                                        <option value="Menunggu Konfirmasi" <?= ($janji['status'] == 'Menunggu Konfirmasi') ? 'selected' : ''; ?>>
+                                            Menunggu Konfirmasi</option>
+                                        <option value="Diterima" <?= ($janji['status'] == 'Diterima') ? 'selected' : ''; ?>>Diterima</option>
+                                        <option value="Selesai" <?= ($janji['status'] == 'Selesai') ? 'selected' : ''; ?>>
+                                            Selesai</option>
+                                    </select>
+                                    <div id="status" class="form-text">Ubah Status.</div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col">

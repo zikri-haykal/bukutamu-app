@@ -85,7 +85,7 @@
   <div class="row">
     <div class="card w-100">
       <div class="card-body p-4">
-        <h5 class="card-title fw-semibold mb-3">Diisi Terbaru</h5>
+        <h5 class="card-title fw-semibold mb-3">Buku Tamu Harian</h5>
         <div class="col">
           <a href="<?= base_url('admin/buku') ?>" class="btn btn-primary">Kelola</a>
         </div>

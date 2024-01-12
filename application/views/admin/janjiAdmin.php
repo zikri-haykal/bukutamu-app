@@ -1,23 +1,38 @@
+<?php
+function getStatusClass($status)
+{
+    switch ($status) {
+        case 'Menunggu Konfirmasi':
+            return 'text-bg-warning';
+        case 'Diterima':
+            return 'text-bg-primary';
+        case 'Selesai':
+            return 'text-bg-success';
+        default:
+            return ''; // Default class jika status tidak sesuai dengan kondisi di atas
+    }
+}
+?>
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-           <h5 class="card-title fw-semibold mb-2">
-               <?= $konten['nama_kantor'] ?>
-        </h5>
-        <p class="mb-3">
-            Alamat:
-            <?= $konten['alamat_kantor'] ?> |
-            No Telephone:
-            <?= $konten['no_hp'] ?> |
-            Fax:
-            <?= $konten['fax'] ?>
-        </p>
-        <hr>
+            <h5 class="card-title fw-semibold mb-2">
+                <?= $konten['nama_kantor'] ?>
+            </h5>
+            <p class="mb-3">
+                Alamat:
+                <?= $konten['alamat_kantor'] ?> |
+                No Telephone:
+                <?= $konten['no_hp'] ?> |
+                Fax:
+                <?= $konten['fax'] ?>
+            </p>
+            <hr>
             <div class="col-md-12">
                 <div class="alert alert-info d-flex align-items-center" role="alert">
                     <i class="ti ti-info-circle me-2" style="font-size: 1.5em;"></i>
                     <div>
-                        Admin jangan lupa perbarui status pertemuan yaa!
+                        Admin, tolong perbarui status pertemuan, ya! Jangan lupa memperbarui informasinya.
                     </div>
                 </div>
             </div>
@@ -69,7 +84,7 @@
                                     <?= $us['waktu']; ?>
                                 </td>
                                 <td>
-                                    <span class="badge rounded-pill text-bg-success">
+                                    <span class="badge rounded-pill <?= getStatusClass($us['status']); ?>">
                                         <?= $us['status']; ?>
                                     </span>
                                 </td>

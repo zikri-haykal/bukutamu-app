@@ -15,11 +15,12 @@
             <hr>
             <h6 class="card-title fw-semibold mb-2">
                 <h6 class="card-title fw-semibold mb-2">
+                    Acara
                     <?= htmlspecialchars(urldecode($nama_acara)); ?>
                 </h6>
             </h6>
             <?= $this->session->flashdata('message'); ?>
-            <a href="<?= base_url('tamu/acara') ?>" class="btn btn-primary">Kembali</a>
+            <a href="<?= base_url('tamu/acara') ?>" class="btn btn-primary me-2">Kembali</a>
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTambah"><i
                     class="ti ti-plus me-2"></i>Tambah</button>
             <div class="table-responsive mt-3">
@@ -100,7 +101,9 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Acara</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Tamu Acara
+                        <?= htmlspecialchars(urldecode($nama_acara), ENT_QUOTES, 'UTF-8'); ?>
+                    </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="<?= base_url('tamu/insertIsiAcara') ?>" method="post" enctype="multipart/form-data">
@@ -109,29 +112,33 @@
                         <div class="mb-3">
                             <label for="acara" class="form-label">Nama Acara</label>
                             <input type="text" name="acara" class="form-control" id="acara" aria-describedby="acara"
-                                value="<?= $nama_acara; ?>" placeholder="Masukkan Nama Acara" readonly>
+                                value="<?= htmlspecialchars(urldecode($nama_acara), ENT_QUOTES, 'UTF-8'); ?>"
+                                placeholder="Masukkan Nama Acara" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="nama_tamu" class="form-label">Nama Anda</label>
                             <input type="text" name="nama_tamu" class="form-control" id="nama_tamu"
                                 aria-describedby="tamu" value="<?= set_value('nama_tamu') ?>"
-                                placeholder="Masukkan Nama tamu">
+                                placeholder="Masukkan Namamu">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="instansi" class="form-label">Instansi</label>
+                                <input type="text" name="instansi" class="form-control" id="instansi"
+                                    aria-describedby="instansi" value="<?= set_value('instansi') ?>"
+                                    placeholder="Nama instansi">
+                                <?= form_error('instansi', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="alamat" class="form-label">Alamat</label>
+                                <input type="text" name="alamat" class="form-control" id="alamat"
+                                    aria-describedby="alamat" value="<?= set_value('alamat') ?>"
+                                    placeholder="Alamat Acara">
+                                <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <label for="tempat" class="form-label">Instansi</label>
-                            <input type="text" name="instansi" class="form-control" id="instansi"
-                                aria-describedby="instansi" value="<?= set_value('instansi') ?>"
-                                placeholder="Nama instansi">
-                            <?= form_error('instansi', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
-                        <div class="mb-3">
-                            <label for="alamat" class="form-label">Alamat</label>
-                            <input type="text" name="alamat" class="form-control" id="alamat" aria-describedby="alamat"
-                                value="<?= set_value('alamat') ?>" placeholder="Alamat Acara">
-                            <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
-                        <div class="mb-3">
-                            <label for="paraf" class="form-label">Paraf</label>
+                            <label for="paraf" class="form-label">Paraf Digital</label>
                             <input type="file" name="paraf" class="form-control" id="paraf" aria-describedby="paraf"
                                 value="<?= set_value('paraf') ?>" placeholder="Paraf Acara">
                             <?= form_error('paraf', '<small class="text-danger pl-3">', '</small>'); ?>

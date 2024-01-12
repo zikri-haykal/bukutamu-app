@@ -21,20 +21,26 @@
                                     id="email" aria-describedby="email" readonly></input>
                                 <div id="emailHelp" class="form-text">email User.</div>
                             </div>
-                            <div class="mb-3">
-                                <label for="date_created" class="form-label">Tanggal Dibuat</label>
-                                <input type="text" name="date_created" class="form-control" id="date_created"
-                                    aria-describedby="date_created" value="<?= $holder['date_created']; ?>" readonly>
-                                <div id="date_createdHelp" class="form-text">Tanggal Dibuat.</div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="date_created" class="form-label">Tanggal Dibuat</label>
+                                    <input type="text" name="date_created" class="form-control" id="date_created"
+                                        aria-describedby="date_created" value="<?= $holder['date_created']; ?>"
+                                        readonly>
+                                    <div id="date_created" class="form-text">Tanggal Dibuat.</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="role" class="form-label">Role</label>
+                                    <select name="role" id="role" class="form-control">
+                                        <option value="Admin" <?= ($holder['role'] == 'Admin') ? 'selected' : ''; ?>>Admin
+                                        </option>
+                                        <option value="User" <?= ($holder['role'] == 'User') ? 'selected' : ''; ?>>Tamu
+                                        </option>
+                                    </select>
+                                    <div id="role" class="form-text">Ubah role.</div>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="role" class="form-label">Role</label>
-                                <select name="role" id="role" value="<?= $holder['role']; ?>" class="form-control">
-                                    <option value="Admin">Admin</option>
-                                    <option value="User">Tamu</option>
-                                </select>
-                                <div id="role" class="form-text">Ubah role.</div>
-                            </div>
+
                             <div class="row">
                                 <div class="col">
                                     <a href="<?= base_url('admin/holder') ?>" class="btn btn-danger">Kembali</a>

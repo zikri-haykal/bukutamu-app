@@ -37,7 +37,7 @@ class Tamu extends CI_Controller
   {
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['konten'] = $this->Konten_model->getById(1);
-    $this->load->view('layout/header', $data);
+    $this->load->view('layout/headerLandingPage', $data);
     $this->load->view('tamu/indexTamu', $data);
     $this->load->view('layout/footer');
   }
@@ -188,10 +188,12 @@ class Tamu extends CI_Controller
   }
   public function isiAcara($nama_acara)
   {
+    // Decode nilai parameter dari URL
+    $decoded_nama_acara = urldecode($nama_acara);
     $data['konten'] = $this->Konten_model->getById(1);
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['acara'] = $this->Tamuacara_model->get();
-    $data['nama_acara'] = $nama_acara;
+    $data['nama_acara'] = $decoded_nama_acara;
 
     $this->load->view('layout/header', $data);
     $this->load->view('tamu/isiAcaraTamu', $data);

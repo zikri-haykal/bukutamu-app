@@ -60,7 +60,10 @@
                                     <?= $us['waktu']; ?>
                                 </td>
                                 <td>
-                                    <?= $us['status']; ?>
+                                    <span
+                                        class="badge rounded-pill <?= ($us['status'] == 'Dibuka') ? 'text-bg-primary' : 'text-bg-danger'; ?>">
+                                        <?= $us['status']; ?>
+                                    </span>
                                 </td>
                                 <td>
                                     <?php if ($us['status'] != 'Ditutup'): ?>

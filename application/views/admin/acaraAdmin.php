@@ -64,7 +64,10 @@
                                     <?= $us['waktu']; ?>
                                 </td>
                                 <td>
-                                    <?= $us['status']; ?>
+                                    <span
+                                        class="badge rounded-pill <?= ($us['status'] == 'Dibuka') ? 'text-bg-primary' : 'text-bg-danger'; ?>">
+                                        <?= $us['status']; ?>
+                                    </span>
                                 </td>
                                 <td>
                                     <a href="<?= base_url('admin/updateAcara/') . $us['id']; ?>" class="btn btn-warning">
@@ -109,19 +112,22 @@
                                 value="<?= set_value('tempat') ?>" placeholder="Tempat Acara">
                             <?= form_error('tempat', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
-                        <div class="mb-3">
-                            <label for="tanggal" class="form-label">Tanggal</label>
-                            <input type="date" name="tanggal" class="form-control" id="tanggal"
-                                aria-describedby="tanggal" value="<?= set_value('tanggal') ?>"
-                                placeholder="Tanggal Acara">
-                            <?= form_error('tanggal', '<small class="text-danger pl-3">', '</small>'); ?>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="tanggal" class="form-label">Tanggal</label>
+                                <input type="date" name="tanggal" class="form-control" id="tanggal"
+                                    aria-describedby="tanggal" value="<?= set_value('tanggal') ?>"
+                                    placeholder="Tanggal Acara">
+                                <?= form_error('tanggal', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="waktu" class="form-label">Waktu</label>
+                                <input type="time" name="waktu" class="form-control" id="waktu" aria-describedby="waktu"
+                                    value="<?= set_value('waktu') ?>" placeholder="Waktu Acara">
+                                <?= form_error('waktu', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="waktu" class="form-label">Waktu</label>
-                            <input type="time" name="waktu" class="form-control" id="waktu" aria-describedby="waktu"
-                                value="<?= set_value('waktu') ?>" placeholder="Waktu Acara">
-                            <?= form_error('waktu', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

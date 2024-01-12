@@ -16,17 +16,19 @@
                                     aria-describedby="namaPengunjung" value="<?= $harian['nama_pengunjung']; ?>">
                                 <?= form_error('nama_pengunjung', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
-                            <div class="mb-3">
-                                <label for="instansi" class="form-label">Instansi</label>
-                                <input type="text" name="instansi" class="form-control" id="instansi"
-                                    value="<?= $harian['instansi']; ?>">
-                                <?= form_error('instansi', '<small class="text-danger pl-3">', '</small>'); ?>
-                            </div>
-                            <div class="mb-3">
-                                <label for="alamat" class="form-label">Alamat</label>
-                                <input type="text" name="alamat" class="form-control" id="alamat"
-                                    value="<?= $harian['alamat']; ?>">
-                                <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="instansi" class="form-label">Instansi</label>
+                                    <input type="text" name="instansi" class="form-control" id="instansi"
+                                        value="<?= $harian['instansi']; ?>">
+                                    <?= form_error('instansi', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="alamat" class="form-label">Alamat</label>
+                                    <input type="text" name="alamat" class="form-control" id="alamat"
+                                        value="<?= $harian['alamat']; ?>">
+                                    <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="keperluan" class="form-label">Keperluan</label>
